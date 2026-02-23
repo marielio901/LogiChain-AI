@@ -25,9 +25,31 @@ html, body, .stApp {
   color: var(--lc-text);
 }
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 [data-testid="stAppViewContainer"],
 .stApp {
   background: radial-gradient(circle at 14% -8%, #edf5ff 0%, #f6f9fd 44%, #f3f7fc 100%);
+}
+
+[data-testid="stHeader"] {
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  height: 0 !important;
+}
+
+[data-testid="stToolbar"],
+[data-testid="stDecoration"] {
+  display: none !important;
+}
+
+[data-testid="stAppViewContainer"] > .main {
+  padding-top: 0 !important;
 }
 
 [data-testid="stMain"],
@@ -175,10 +197,10 @@ section[data-testid="stSidebar"] label {
   box-shadow: none;
 }
 
-.stTextInput input,
-.stNumberInput input,
-.stTextArea textarea,
-.stDateInput input,
+.stTextInput > div > div,
+.stNumberInput > div > div,
+.stDateInput > div > div,
+.stTextArea > div > div,
 .stSelectbox [data-baseweb="select"] > div,
 .stMultiSelect [data-baseweb="select"] > div {
   border-radius: 12px !important;
@@ -189,6 +211,8 @@ section[data-testid="stSidebar"] label {
 
 [data-baseweb="base-input"],
 [data-baseweb="base-input"] > div,
+[data-baseweb="input"],
+[data-baseweb="input"] > div,
 [data-baseweb="select"] > div,
 [data-baseweb="textarea"] {
   border-radius: 12px !important;
@@ -197,18 +221,39 @@ section[data-testid="stSidebar"] label {
   box-shadow: none !important;
 }
 
+[data-baseweb="input"],
+[data-baseweb="textarea"] {
+  outline: none !important;
+}
+
+.stTextInput > div > div:focus-within,
+.stNumberInput > div > div:focus-within,
+.stDateInput > div > div:focus-within,
+.stTextArea > div > div:focus-within,
 [data-baseweb="base-input"]:focus-within,
+[data-baseweb="input"]:focus-within,
 [data-baseweb="select"]:focus-within,
 [data-baseweb="textarea"]:focus-within {
   border-color: #74b4f8 !important;
   box-shadow: 0 0 0 1px #74b4f8 !important;
+  outline: none !important;
 }
 
 .stTextInput input:focus,
 .stNumberInput input:focus,
 .stTextArea textarea:focus,
-.stDateInput input:focus {
-  border-color: #74b4f8 !important;
+.stDateInput input:focus,
+.stTextInput input:focus-visible,
+.stNumberInput input:focus-visible,
+.stTextArea textarea:focus-visible,
+.stDateInput input:focus-visible,
+[data-baseweb="input"] input:focus,
+[data-baseweb="input"] input:focus-visible,
+[data-baseweb="select"] input:focus,
+[data-baseweb="select"] input:focus-visible,
+[data-baseweb="textarea"] textarea:focus,
+[data-baseweb="textarea"] textarea:focus-visible {
+  outline: none !important;
   box-shadow: none !important;
 }
 
@@ -216,8 +261,12 @@ section[data-testid="stSidebar"] label {
 .stNumberInput input,
 .stTextArea textarea,
 .stDateInput input,
+[data-baseweb="input"] input,
+[data-baseweb="textarea"] textarea,
 [data-baseweb="select"] input {
   color: #173a5c !important;
+  outline: none !important;
+  box-shadow: none !important;
 }
 
 .stCheckbox {
