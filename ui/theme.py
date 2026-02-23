@@ -52,6 +52,40 @@ html, body, .stApp {
   padding-top: 0 !important;
 }
 
+[data-testid="stBottom"] {
+  background: linear-gradient(180deg, rgba(243, 247, 252, 0) 0%, #edf4fd 22%, #e8f1fb 100%) !important;
+  border-top: 1px solid #d8e4f3 !important;
+}
+
+[data-testid="stBottomBlockContainer"] {
+  max-width: 100% !important;
+  padding-top: 0.72rem !important;
+  padding-bottom: 0.95rem !important;
+  padding-left: 1.5rem !important;
+  padding-right: 1.5rem !important;
+  background: transparent !important;
+}
+
+[data-testid="stChatInput"] > div {
+  background: #ffffff !important;
+  border: 1px solid #d3e2f4 !important;
+  border-radius: 14px !important;
+  box-shadow: 0 8px 18px rgba(25, 69, 120, 0.1) !important;
+}
+
+[data-testid="stChatInputTextArea"] {
+  color: #173a5c !important;
+}
+
+[data-testid="stChatInputTextArea"]::placeholder {
+  color: #6e859f !important;
+}
+
+[data-testid="stChatInputSubmitButton"]:disabled {
+  background: #c9d9ec !important;
+  color: #f7fbff !important;
+}
+
 [data-testid="stMain"],
 [data-testid="stMain"] > div,
 [data-testid="stMainBlockContainer"] {
@@ -174,7 +208,8 @@ section[data-testid="stSidebar"] label {
 }
 
 .stButton > button,
-.stDownloadButton > button {
+.stDownloadButton > button,
+.stFormSubmitButton > button {
   border-radius: 11px;
   border: 1px solid #79b8f8;
   background: linear-gradient(135deg, #55acff 0%, #2e8fee 100%);
@@ -185,12 +220,14 @@ section[data-testid="stSidebar"] label {
 }
 
 .stButton > button:hover,
-.stDownloadButton > button:hover {
+.stDownloadButton > button:hover,
+.stFormSubmitButton > button:hover {
   border-color: #2788e9;
   background: linear-gradient(135deg, #4fa8ff 0%, #237fd9 100%);
 }
 
-.stButton > button[kind="secondary"] {
+.stButton > button[kind="secondary"],
+.stFormSubmitButton > button[kind="secondary"] {
   background: #f8fbff;
   color: #1b5393;
   border-color: #9ec7f5;
@@ -226,10 +263,47 @@ section[data-testid="stSidebar"] label {
   outline: none !important;
 }
 
+div[data-testid="stNumberInputContainer"] {
+  border-radius: 12px !important;
+  border: 1px solid #d3e2f4 !important;
+  background: #ffffff !important;
+  overflow: hidden !important;
+}
+
+div[data-testid="stNumberInputContainer"] > div {
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+[data-testid="stNumberInputField"] {
+  color: #173a5c !important;
+  background: #ffffff !important;
+}
+
+[data-testid="stNumberInputStepDown"],
+[data-testid="stNumberInputStepUp"] {
+  background: #f3f9ff !important;
+  color: #1f63ae !important;
+  border: 0 !important;
+  border-left: 1px solid #d3e2f4 !important;
+  box-shadow: none !important;
+}
+
+[data-testid="stNumberInputStepDown"]:hover,
+[data-testid="stNumberInputStepUp"]:hover {
+  background: #e8f3ff !important;
+}
+
+[data-testid="stNumberInputStepDown"] svg,
+[data-testid="stNumberInputStepUp"] svg {
+  color: #1f63ae !important;
+}
+
 .stTextInput > div > div:focus-within,
 .stNumberInput > div > div:focus-within,
 .stDateInput > div > div:focus-within,
 .stTextArea > div > div:focus-within,
+[data-testid="stNumberInputContainer"]:focus-within,
 [data-baseweb="base-input"]:focus-within,
 [data-baseweb="input"]:focus-within,
 [data-baseweb="select"]:focus-within,
@@ -271,6 +345,11 @@ section[data-testid="stSidebar"] label {
 
 .stCheckbox {
   padding-top: 0.15rem;
+}
+
+.stCheckbox input[type="checkbox"],
+[data-baseweb="checkbox"] input[type="checkbox"] {
+  accent-color: #3f9dff !important;
 }
 
 .stTabs [data-baseweb="tab-list"] {
@@ -328,6 +407,39 @@ div[data-testid="stVerticalBlockBorderWrapper"]:has([data-testid="stPlotlyChart"
   border: 1px solid #d7e3f2;
   box-shadow: 0 8px 22px rgba(25, 69, 120, 0.08);
   overflow: hidden;
+  background: #ffffff !important;
+}
+
+[data-testid="stDataFrame"] [data-testid="stDataFrameGlideDataEditor"],
+[data-testid="stDataFrame"] .gdg-style,
+[data-testid="stDataFrame"] .gdg-unstyle {
+  --gdg-accent-color: #3f9dff;
+  --gdg-accent-fg: #ffffff;
+  --gdg-accent-light: #e8f3ff;
+  --gdg-bg-cell: #ffffff;
+  --gdg-bg-cell-medium: #f6faff;
+  --gdg-bg-header: #f1f6fd;
+  --gdg-bg-header-hovered: #e8f2fd;
+  --gdg-bg-header-has-focus: #deedff;
+  --gdg-bg-group-header: #f1f6fd;
+  --gdg-bg-group-header-hovered: #e8f2fd;
+  --gdg-bg-search-result: #eaf5ff;
+  --gdg-bg-bubble: #ecf6ff;
+  --gdg-bg-bubble-selected: #dceeff;
+  --gdg-border-color: #d7e3f2;
+  --gdg-horizontal-border-color: #e2ebf7;
+  --gdg-header-bottom-border-color: #d2e0f1;
+  --gdg-text-dark: #143451;
+  --gdg-text-medium: #47627e;
+  --gdg-text-header: #264663;
+  --gdg-text-header-selected: #0e59b3;
+  --gdg-text-group-header: #264663;
+  --gdg-link-color: #1d67bf;
+  background: #ffffff !important;
+}
+
+[data-testid="stDataFrame"] canvas {
+  background: #ffffff !important;
 }
 
 [data-testid="stAlert"] {
