@@ -20,7 +20,7 @@ THEME_CSS = """
   --lc-muted: #5b6f87;
 }
 
-html, body, [class*="css"] {
+html, body, .stApp {
   font-family: "Plus Jakarta Sans", "Manrope", sans-serif;
   color: var(--lc-text);
 }
@@ -28,6 +28,20 @@ html, body, [class*="css"] {
 [data-testid="stAppViewContainer"],
 .stApp {
   background: radial-gradient(circle at 14% -8%, #edf5ff 0%, #f6f9fd 44%, #f3f7fc 100%);
+}
+
+[data-testid="stMain"],
+[data-testid="stMain"] > div,
+[data-testid="stMainBlockContainer"] {
+  opacity: 1 !important;
+  filter: none !important;
+}
+
+[data-testid="stMain"] p,
+[data-testid="stMain"] label,
+[data-testid="stMain"] .stCaption,
+[data-testid="stMain"] .stMarkdown {
+  color: #2b4764 !important;
 }
 
 [data-testid="stMainBlockContainer"] {
@@ -170,6 +184,24 @@ section[data-testid="stSidebar"] label {
   border-radius: 12px !important;
   border: 1px solid #d3e2f4 !important;
   background: #ffffff !important;
+  box-shadow: none !important;
+}
+
+[data-baseweb="base-input"],
+[data-baseweb="base-input"] > div,
+[data-baseweb="select"] > div,
+[data-baseweb="textarea"] {
+  border-radius: 12px !important;
+  border: 1px solid #d3e2f4 !important;
+  background: #ffffff !important;
+  box-shadow: none !important;
+}
+
+[data-baseweb="base-input"]:focus-within,
+[data-baseweb="select"]:focus-within,
+[data-baseweb="textarea"]:focus-within {
+  border-color: #74b4f8 !important;
+  box-shadow: 0 0 0 1px #74b4f8 !important;
 }
 
 .stTextInput input:focus,
@@ -177,7 +209,15 @@ section[data-testid="stSidebar"] label {
 .stTextArea textarea:focus,
 .stDateInput input:focus {
   border-color: #74b4f8 !important;
-  box-shadow: 0 0 0 1px #74b4f8 !important;
+  box-shadow: none !important;
+}
+
+.stTextInput input,
+.stNumberInput input,
+.stTextArea textarea,
+.stDateInput input,
+[data-baseweb="select"] input {
+  color: #173a5c !important;
 }
 
 .stCheckbox {
