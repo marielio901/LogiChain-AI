@@ -77,9 +77,9 @@ def render_ai_agent_page():
         with st.chat_message("assistant"):
             st.markdown(
                 "Faça uma pergunta como:\n"
-                "- `Quais contratos vencem nos próximos 45 dias?`\n"
-                "- `Liste contratos em vigor com risco alto.`\n"
-                "- `Mostre o resumo do contrato LC-2026-001.`"
+                "- Quais contratos vencem nos próximos 45 dias?\n"
+                "- Liste contratos em vigor com risco alto.\n"
+                "- Mostre o resumo do contrato LC-2026-001."
             )
         return
 

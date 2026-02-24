@@ -40,12 +40,41 @@ html, body, .stApp {
   background: transparent !important;
   border: 0 !important;
   box-shadow: none !important;
-  height: 0 !important;
+  backdrop-filter: none !important;
 }
 
-[data-testid="stToolbar"],
+[data-testid="stToolbar"] {
+  background: transparent !important;
+  border: 0 !important;
+  min-height: 0 !important;
+  padding: 0.28rem 0.34rem 0 0.34rem !important;
+}
+
 [data-testid="stDecoration"] {
   display: none !important;
+}
+
+[data-testid="stToolbar"] [data-testid="stStatusWidget"],
+[data-testid="stToolbar"] [data-testid="stMainMenu"],
+[data-testid="stToolbar"] .stAppDeployButton {
+  display: none !important;
+}
+
+[data-testid="stExpandSidebarButton"] {
+  border-radius: 10px !important;
+  border: 1px solid #cfe0f5 !important;
+  background: #ffffff !important;
+  color: #1f63ae !important;
+  box-shadow: 0 6px 14px rgba(20, 61, 108, 0.14) !important;
+}
+
+[data-testid="stExpandSidebarButton"]:hover {
+  background: #eef6ff !important;
+  border-color: #a7caf4 !important;
+}
+
+[data-testid="stExpandSidebarButton"] svg {
+  color: #1f63ae !important;
 }
 
 [data-testid="stAppViewContainer"] > .main {
@@ -55,6 +84,14 @@ html, body, .stApp {
 [data-testid="stBottom"] {
   background: linear-gradient(180deg, rgba(243, 247, 252, 0) 0%, #edf4fd 22%, #e8f1fb 100%) !important;
   border-top: 1px solid #d8e4f3 !important;
+}
+
+[data-testid="stBottom"] > div {
+  background: #edf4fd !important;
+}
+
+[data-testid="stBottom"] > div > div {
+  background: transparent !important;
 }
 
 [data-testid="stBottomBlockContainer"] {
@@ -73,6 +110,10 @@ html, body, .stApp {
   box-shadow: 0 8px 18px rgba(25, 69, 120, 0.1) !important;
 }
 
+[data-testid="stChatInput"] {
+  background: transparent !important;
+}
+
 [data-testid="stChatInputTextArea"] {
   color: #173a5c !important;
 }
@@ -84,6 +125,20 @@ html, body, .stApp {
 [data-testid="stChatInputSubmitButton"]:disabled {
   background: #c9d9ec !important;
   color: #f7fbff !important;
+}
+
+[data-testid="stChatMessage"] {
+  border-radius: 12px !important;
+}
+
+[data-testid="stChatMessage"] code,
+[data-testid="stMain"] code,
+[data-testid="stMain"] .stMarkdown code {
+  background: #ecf5ff !important;
+  color: #175596 !important;
+  border: 1px solid #cfe3fb;
+  border-radius: 6px;
+  padding: 0.08rem 0.36rem;
 }
 
 [data-testid="stMain"],
